@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>J-P Fashion</title>
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css" />
+    <link
+      href="/vendor/Bootstrap/bootstrap-5.0.2-dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./vendor/animate.min.css"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/responsive992px.css" />
+    <link rel="stylesheet" href="./css/responsive576px.css" />
+    <script src="./vendor/jquery.js"></script>
+  </head>
+
+  <body>
+    <header class="headerMenu">
+      <div class="header">
+        <div class="header-1">
+          <div class="header-item toggle">
+            <img src="/images/toggle-icon.png" alt="" /><br />
+            <span>MENU</span>
+          </div>
+          <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="" /></a>
+          </div>
+          <div class="form-search">
+            <input class="text-search" type="text" />
+            <button class="btn-search" type="submit">
+              <i class="fal fa-search"></i>
+              <span>TÌM KIẾM</span>
+            </button>
+          </div>
+          <div class="user-address-cart">
+            <ul class="list-info">
+              <!-- Item Search thêm ở Mobile -->
+              <li class="btn-search-mb1">
+                <button class="btn-search-mb">
+                  <i class="fal fa-search"></i><br />
+                  <span>TÌM KIẾM</span>
+                </button>
+                <!-- Navbar search  -->
+                <div class="navbar-search">
+                  <div class="navbar-search-item">
+                    <div class="input-search-wrap">
+                      <input type="text" />
+                      <i class="fal fa-search"></i>
+                    </div>
+                  </div>
+                  <button class="icon-search-x">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </li>
+              <li class="cart">
+                <a href="./login.html" class="openaccount">
+                  <i class="fas fa-user"></i><br/>
+                  <span>TÀI KHOẢN</span>
+                </a>
+              </li>
+              <li class="address">
+                <a href="he-thong.html">
+                  <i class="fas fa-map-marker-alt"></i><br />
+                  <span>CỬA HÀNG</span>
+                </a>
+              </li>
+              <li class="cart">
+                <a href="./giohang.html">
+                  <i class="fal fa-shopping-cart"></i><br />
+                  <span>GIỎ HÀNG</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="header-2">
+          <!-- NEW MENU -->
+          <ul class="menu-parent">
+            <li class="sub-menu-item">
+              <a href="#">Menu</a>
+              <ul class="sub-menu ">
+                <li>
+                  <p><b>SẢN PHẨM</b></p>
+                  <ul class="sub-menu-sp">
+                    <li><a href="sanpham.html">Đầm</a></li>
+                    <li><a href="sanpham.html">Áo Sơ Mi</a></li>
+                    <li><a href="sanpham.html">Áo Thun</a></li>
+                    <li><a href="sanpham.html">ÁO Len - Dệt Kim</a></li>
+                    <li><a href="sanpham.html">Áo Khoác</a></li>
+                    <li><a href="sanpham.html">Quần Shorts</a></li>
+                    <li><a href="sanpham.html">Quần Jean</a></li>
+                    <li><a href="sanpham.html">Quần Culottes</a></li>
+                    <li><a href="sanpham.html">Quần KaKi - Quần Tây</a></li>
+                    <li><a href="sanpham.html">Jumpsuit</a></li>
+                    <li><a href="sanpham.html">Chân Váy</a></li>
+                    <li><a href="sanpham.html">Đồ Mặc Nhà</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p><b>PHỤ KIỆN</b></p>
+                  <ul class="sub-menu-sp">
+                    <li><a href="phukien.html">Ba lô</a></li>
+                    <li><a href="phukien.html">Túi Xách</a></li>
+                    <li><a href="phukien.html">Giày</a></li>
+                    <li><a href="phukien.html">Dây Nịt</a></li>
+                    <li><a href="phukien.html">Nón</a></li>
+                    <li><a href="phukien.html">Phụ Kiện Khác</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="sub-menu-news">
+              <a href="meo-hay.html">TIN TỨC VÀ MẸO HAY</a>
+            </li>
+            <li><a href="#lienhe">LIÊN HỆ</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- MENU MOBILE -->
+    <div class="submenu-toggle">
+      <div class="toggle-wrap">
+        <ul class="list-toggle">
+          
+          <li>
+            <div class="submenu-sp-mb">
+              <p><b>SẢN PHẨM</b></p>
+              <span class="drop-menu drop-menu-1"
+                ><i class="far fa-chevron-down"></i
+              ></span>
+            </div>
+            <ul class="submenu-sp-item-mb">
+              <li><a href="sanpham.html">Đầm</a></li>
+              <li><a href="sanpham.html">Áo Sơ Mi</a></li>
+              <li><a href="sanpham.html">Áo Thun</a></li>
+              <li><a href="sanpham.html">ÁO Len - Dệt Kim</a></li>
+              <li><a href="sanpham.html">Áo Khoác</a></li>
+              <li><a href="sanpham.html">Quần Shorts</a></li>
+              <li><a href="sanpham.html">Quần Jean</a></li>
+              <li><a href="sanpham.html">Quần Culottes</a></li>
+              <li><a href="sanpham.html">Quần KaKi - Quần Tây</a></li>
+              <li><a href="sanpham.html">Jumpsuit</a></li>
+              <li><a href="sanpham.html">Chân Váy</a></li>
+              <li><a href="sanpham.html">Đồ Mặc Nhà</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="submenu-sp-mb">
+              <p><b>PHỤ KIỆN</b></p>
+              <span class="drop-menu drop-menu-3"
+                ><i class="far fa-chevron-down"></i
+              ></span>
+            </div>
+            <ul class="submenu-sp-item-mb">
+              <li><a href="phukien.html">Ba lô</a></li>
+              <li><a href="phukien.html">Túi Xách</a></li>
+              <li><a href="phukien.html">Giày</a></li>
+              <li><a href="phukien.html">Dây Nịt</a></li>
+              <li><a href="phukien.html">Nón</a></li>
+              <li><a href="phukien.html">Phụ Kiện Khác</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="close-menutoggle">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide show -->
+    <div class="slide_index wow animate__animated animate__fadeIn">
+      <div class="slide-item">
+        <img class="img-slide" src="images/noel-slide.jpeg" alt="" />
+        <img class="img-slide-mb" src="images/noel-slide-mb.jpeg" alt="" />
+      </div>
+      <div class="slide-item">
+        <img class="img-slide" src="images/img-1.jpeg" alt="" />
+        <img class="img-slide-mb" src="images/hinh-dt-1.jpeg" alt="" />
+      </div>
+      <div class="slide-item">
+        <img
+          class="img-slide"
+          src="images/COVER_SALE_2211_fix1-2.jpeg"
+          alt=""
+        />
+        <img class="img-slide-mb" src="images/hinh-dt-2.jpeg" alt="" />
+      </div>
+    </div>
+
+    <!-- Phần main -->
+    <main class="main-index wow animate__animated animate__fadeIn">
+      
+      <div class="index-img product-likes wow animate__animated animate__fadeInUp">
+        <div class="index-img-item">
+          <a href="./sanpham.html"
+            ><img src="images/index-img-1.jpeg" alt=""
+          /></a>
+        </div>
+        <div class="index-img-item">
+          <a href="./sanpham.html"
+            ><img src="images/index-img-2.jpeg" alt=""
+          /></a>
+        </div>
+      </div>
+      <div class="index-poster product-likes wow animate__animated animate__fadeInUp">
+        <div class="index-poster-img">
+          <a href="./sanpham.html"
+            ><img src="images/index-poster.jpeg" alt=""
+          /></a>
+        </div>
+      </div>
+      <div class="product-likes wow animate__animated animate__fadeInUp">
+        <h3>NHỮNG SẢN PHẨM ĐƯỢC YÊU THÍCH</h3>
+        <!-- Sự kiện 2  Index-->
+        <div class="product-likes-item">
+          <div class="likes-item">
+            <div class="likes-img">
+              <a href="product.html">
+                <img src="images/like-1.jpeg" alt="" />
+              </a>
+            </div>
+            <div class="likes-content">
+              <div class="likes-price">
+                <p>Quần baggy lưng thun</p>
+                <p>495.000 đ</p>
+              </div>
+              <div class="likes-color">
+                <span class="color color-1"></span>
+                <span class="color color-2"></span>
+                <span class="color color-3"></span>
+              </div>
+            </div>
+          </div>
+          <div class="likes-item">
+            <div class="likes-img">
+              <a href="product.html">
+                <img src="images/like-2.jpeg" alt="" />
+              </a>
+            </div>
+            <div class="likes-content">
+              <div class="likes-price">
+                <p>Quần baggy lưng thun</p>
+                <p>495.000 đ</p>
+              </div>
+              <div class="likes-color">
+                <span class="color color-4"></span>
+                <span class="color color-5"></span>
+                <span class="color color-6"></span>
+              </div>
+            </div>
+          </div>
+          <div class="likes-item">
+            <div class="likes-img">
+              <a href="product.html">
+                <img src="images/like-3.jpeg" alt="" />
+              </a>
+            </div>
+            <div class="likes-content">
+              <div class="likes-price">
+                <p>Quần baggy lưng thun</p>
+                <p>495.000 đ</p>
+              </div>
+              <div class="likes-color">
+                <span class="color color-7"></span>
+                <span class="color color-8"></span>
+                <span class="color color-9"></span>
+              </div>
+            </div>
+          </div>
+          <div class="likes-item">
+            <div class="likes-img">
+              <a href="product.html">
+                <img src="images/like-4.jpeg" alt="" />
+              </a>
+            </div>
+            <div class="likes-content">
+              <div class="likes-price">
+                <p>Quần baggy lưng thun</p>
+                <p>495.000 đ</p>
+              </div>
+              <div class="likes-color">
+                <span class="color color-7"></span>
+                <span class="color color-8"></span>
+                <span class="color color-9"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <footer id="lienhe">
+      <div class="container-fluid footer  wow animate__animated animate__fadeIn">
+        <div class="footer-item footer-contact">
+          <h4>Liên hệ</h4>
+          <p>38 Nguyễn Trãi, Phường 3, Quận 5, Tp Hồ Chí Minh</p>
+          <p>(028) 6679 1099 - (028) 6652 5533</p>
+          <p>salesonline@j-p.vn</p>
+          <p>https://www.j-p.vn</p>
+          <p><img src="images/footer-icon.png" alt="" /></p>
+        </div>
+        <div class="footer-item footer-info">
+          <h4>Thông tin</h4>
+          <p>Giới thiệu</p>
+          <p>Bảo mật thông tin</p>
+          <p>Tuyển dụng</p>
+          <p>Chính sách giao hàng</p>
+        </div>
+        <div class="footer-item footer-pay">
+          <h4>Phương thức thanh toán</h4>
+          <p><img src="images/bank.png" alt="" /></p>
+        </div>
+        <div class="footer-item footer-register">
+          <h4>Đăng ký nhận tin</h4>
+          <div class="text-register">
+            <input type="text" placeholder="Your email" />
+            <a href=""><i class="fas fa-envelope"></i></a>
+          </div>
+          <div class="icon-social">
+            <a href=""><img src="images/icon_face.png" alt="" /></a>
+            <a href=""><img src="images/icon_photo.png" alt="" /></a>
+            <a href=""><img src="images/icon-ytb.png" alt="" /></a>
+            <a href=""><img src="images/icon_zalo.png" alt="" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="container container-footer">
+        <p>Copyright © 2020 Công Ty TNHH May TỨ ĐẠT</p>
+        <p>
+          Giấy chứng nhận Đăng ký kinh doanh số 0309987825 do Sở Kế Hoạch và Đầu
+          Tư Tp Hồ Chí Minh cấp ngày 12/05/2010
+        </p>
+        <p>
+          Địa chỉ: 167 - 169 Võ Thành Trang, Phường 11, Quận Tân Bình, Tp Hồ Chí
+          Minh
+        </p>
+      </div>
+    </footer>
+    <!-- Phần Liên hệ Chung -->
+    <div class="contact">
+      <ul class="list-contact">
+        <li id="contact-hotline">
+          <a href="#" class="contact-icon">
+            <i
+              class="fas fa-phone-alt"
+              style="font-size: 25px; color: black"
+            ></i>
+          </a>
+        </li>
+        <li id="contact-zalo">
+          <a href=""
+            ><img
+              style="height: 40px; width: 40px ;"
+              src="images/icon-zalo.png"
+              alt=""
+          /></a>
+        </li>
+        <li id="contact-mes">
+          <a href=""
+            ><i
+              class="fab fa-facebook-messenger"
+              style="font-size: 40px; color: #3b5998"
+            ></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="background-dark"></div>
+    <script
+      src="./vendor/jquery.js"
+    ></script>
+    <script
+      src="./vendor/poper.js"
+    ></script>
+    <script
+      src="./vendor/bootstrap.js"
+    ></script>
+    <script type="text/javascript" src="./slick/slick.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

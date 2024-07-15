@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VẺ CHART.JS</title>
+    <link rel="stylesheet" href="./vendor/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <script src="./vendor/chart.min.js"></script>
+    <link rel="stylesheet" href="./vendor/Untitled-1.css">
+    <style> chart{ width: 400px;}</style>
+</head>
+<body>
+  <h1>THỐNG KÊ BÁO CÁO DOANH THU</h1>
+    <nav id="hhihi" class="navbar navbar-expand-lg navbar-light bg-light">
+      <img src="./img/z3577504404711_419c27a96bee023c9ca41ebf28d5dc7d.jpg" alt="photo">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><!--active-->
+            <a class="nav-link" href="#">Tổng Số Sản Phẩm<span class="sr-only">(current)</span></a>
+            <ul class="hihi_sub">
+              <li class="mau"><a class="mau" href="#">500</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Số Thành Viên</a>
+            <ul class="hihi_sub">
+              <li class="mau"><a class="mau" href="#">8</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Số Đơn Hàng Của Từng Trạng Thái
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#"> Đơn Đã Giao</a>
+              <ul class="hihi_sub">
+                <li class="mau"><a class="mau" href="#">8</a></li>
+              </ul>
+              <a  class="dropdown-item" href="#"> Đơn Hàng Chờ</a>
+              <ul class="hihi_sub">
+                <li class="mau"><a class="mau" href="#">8</a></li>
+              </ul>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Đơn MỚI</a>
+              <ul class="hihi_sub">
+                <li class="mau"><a class="mau" href="#">8</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+          <form method="get">
+            <h5>Số đơn hàng theo thời gian</h5>
+            <input name="nam_1" type="text" list="nam1" />
+            <datalist id="nam1">
+                <option value="2021">
+                <option value="2022">
+                <option value="2023">
+            </datalist>
+            <button type="submit" class="btn btn-primary"><a href="#01">GỬI</a></button>
+          </form>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+          <form method="get">
+            <div><h5>Doanh thu</h5></div>
+            <input name="nam_2" type="text" list="nam2" />
+            <datalist id="nam2">
+                <option value="2021">
+                <option value="2022">
+                <option value="2023">
+            </datalist>
+            <button type="submit" class="btn btn-primary">GỬI</button>
+          </form>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+          <form method="get">
+            <div><h5>Số lượng theo loại</h5></div>
+            <input name="nam_3" type="text" list="nam3" />
+            <datalist id="nam3">
+                <option value="2021">
+                <option value="2022">
+                <option value="2023">
+            </datalist>
+            <button type="submit" class="btn btn-primary">GỬI</button>
+          </form>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+          <form method="get">
+            <div><h5>Số lượng theo mã</h5></div>
+            <input name="SP" type="text" list="SAN_PHAM" />
+            <datalist id="SAN_PHAM">
+                <option value="sp_01">
+                <option value="sp_02">
+                <option value="sp_03">
+                <option value="sp_04">
+                <option value="sp_05">
+                <option value="sp_06">
+            </datalist>
+            <button type="submit" class="btn btn-primary">GỬI</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h3>TỔNG SỐ ĐƠN HÀNG</h3>
+                <canvas id="myChart" width="auto" height="300">
+                    <script>
+                        var ctx = document.getElementById('myChart');
+                        var myChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                        labels: ['2017','2018','2019','2020','2021','2022'],
+                        datasets: [{
+                            label: 'SỐ ĐƠN HÀNG',
+                            data: [50, 70, 30, 59, 60, 33,69,45,30,90,11,12],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)',
+                
+                            ],
+                            borderWidth: 1
+                        }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                        });
+                    </script>
+                </canvas>
+            </div>
+            <div class="col-6" >
+                <h3>SỐ ĐƠN TỪNG LOẠI THÁNG 1</h3>
+                <canvas id="myChart1" width="auto" height="500">
+                    <script>
+                        var ctx = document.getElementById('myChart1');
+                        var myChart1 = new Chart(ctx,{
+                            type: 'polarArea',
+                            data:{
+                                labels:['ÁO','QUẦN','NÓN','GIÀY','TÚI'],
+                                datasets: [{
+                                    label: 'My First Dataset',
+                                    data: [11, 16, 7, 3, 14],
+                                    backgroundColor: [
+                                    'rgb(255, 99, 132)',
+                                    'rgb(75, 192, 192)',
+                                    'rgb(255, 205, 86)',
+                                    'rgb(201, 203, 207)',
+                                    'rgb(54, 162, 235)']
+                                }]
+                            }
+                            
+                        });
+                    </script>
+                </canvas>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+    <h3>TỔNG DOANH THU NĂM 2022</h3>
+    <canvas id="myChart2" width="auto" height="80"></canvas>
+    <script>
+      var ctx = document.getElementById('myChart2');
+      var myChart2 = new Chart(ctx, {
+      type: 'bar',
+      data: {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June','July','August','September','October','November','December'],
+      datasets: [{
+          label: 'DOANH THU',
+          data: [120, 190, 30, 50, 20, 30,60,45,30,90,110,102],
+          backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',    
+          ],
+          borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)',
+              'rgba(255, 159, 64, 1)',
+              'rgba(255, 159, 64, 1)',
+              'rgba(255, 159, 64, 1)',
+              'rgba(255, 159, 64, 1)',
+              'rgba(255, 159, 64, 1)',
+              'rgba(255, 159, 64, 1)',
+
+          ],
+          borderWidth: 1
+      }]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
+      }
+      }); 
+    </script>
+
+
+
+    <h3>SỐ LƯỢNG SẢN PHẨM BÁN ĐƯỢC THEO LOẠI VÀ THỜI GIAN</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <canvas id="myChart3" width="80" height="600">
+                    <script>
+                        var ctx = document.getElementById('myChart3');
+                        var myChart3 = new Chart(ctx,{
+                           type: 'doughnut',
+                           data:{
+                            labels: [
+                                'Áo',
+                                'Quần',
+                                'Nón',
+                                'Balo',
+                                'Giày',
+                            ],
+                            datasets: [{
+                                label: 'My First Dataset',
+                                data: [300, 50, 20,60,45],
+                                backgroundColor: [
+                                'rgb(255, 99, 132)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 205, 86)',
+                                'rgb(201, 203, 207)',
+                                'rgb(75, 192, 192)',
+                                ],
+                                hoverOffset: 4
+                            }]
+                            }
+                        });
+                    </script>
+                </canvas>
+            </div>
+            <div class="col-6">
+                <canvas id="myChart4" width="auto" height="350">
+                    <script>
+                        var ctx = document.getElementById('myChart4');
+                        var myChart4 = new Chart(ctx,{
+                          type:'scatter',
+                          data:{
+                          labels: ['January', 'February', 'March', 'April', 'May', 'June','July','August','September','October','November','December'],
+                          datasets: [
+                          {
+                          type: 'line',
+                          label: 'Áo',
+                          data: [10, 20, 30, 40,19,25,38,44,51,65,73,80],
+                          borderColor: 'rgb(255, 99, 132)',
+                          }, 
+                          {
+                          type: 'line',
+                          label: 'Quần',
+                          data: [50, 50, 50, 50,91,72,43,72,57,62,71,80],
+                          fill: false,
+                          borderColor: 'rgb(54, 162, 235)',
+                          },
+                          
+                          {
+                          type: 'line',
+                          label: 'Nón',
+                          data: [25,30 ,75,69,90,71,44,73,58,67,77,88],
+                          fill: false,
+                          borderColor:'rgb(255, 205, 86)',
+                          },
+
+                          {
+                          type: 'line',
+                          label: 'Balo',
+                          data: [49, 51, 55, 59,99,76,40,70,51,64,79,28],
+                          fill: false,
+                          borderColor: 'rgb(201, 203, 207)',
+                          },
+
+                          {
+                          type: 'line',
+                          label: 'Giày',
+                          data: [11,21,35,56,15,45,20,46,10,56,100,89],
+                          fill: false,
+                          borderColor:'rgb(75, 192, 192)',
+                          },
+
+                          ]
+                          
+
+                        }
+                        });
+                    </script>
+                </canvas>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <h3>SỐ LƯỢNG SẢN PHẨM BÁN ĐƯỢC THEO MÃ SẢN PHẨM </h3>
+    <canvas id="myChart5" width="auto" height="4">
+        <script>
+            var ctx = document.getElementById('myChart5');
+            var myChart5 = new Chart(ctx,{
+            type:'radar',
+            data:{
+              labels: [
+              'January', 'February', 'March', 'April', 'May', 'June','July','August','September','October','November','December'
+              ],
+              datasets: [{
+              label: 'Sp_01',
+              data: [10, 20, 30, 40,19,25,38,44,51,65,73,80],
+              fill: true,
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgb(255, 99, 132)',
+              pointBackgroundColor: 'rgb(255, 99, 132)',
+              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: '#fff',
+              pointHoverBorderColor: 'rgb(255, 99, 132)'
+              },{
+              label: 'Sp_02',
+              data: [50, 50, 50, 50,91,72,43,72,57,62,71,80],
+              fill: true,
+              backgroundColor: 'rgba(54, 162, 235, 0.2)',
+              borderColor: 'rgb(54, 162, 235)',
+              pointBackgroundColor: 'rgb(54, 162, 235)',
+              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: '#fff',
+              pointHoverBorderColor: 'rgb(54, 162, 235)'
+              },
+              {
+              label: 'Sp_04',
+              data: [25,30 ,75,69,90,71,44,13,23,40,60,100],
+              fill: true,
+              backgroundColor: 'rgba(255, 206, 86, 0.2)',
+              borderColor: 'rgba(255, 206, 86)',
+              pointBackgroundColor: 'rgba(255, 206, 86)',
+              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: '#fff',
+              pointHoverBorderColor: 'rgba(255, 206, 86)'
+              }
+
+
+            ]
+            
+            }
+          });
+        </script>
+    </canvas>
+
+    
+    <div class="accordion" id="accordionExample">
+      <div  class="card">
+        <div class="card-header" id="headingOne">
+          <h2 id="01"  class="mb-0">
+            <button  class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              SỐ ĐƠN HÀNG THEO THỜI GIAN
+            </button>
+          </h2>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            <div>
+              TỔNG SỐ HÓA ĐƠN: 47625 ĐƠN
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 sp">
+                  <div class="card" style="width: 18rem;">
+                    <img src="./img/39fc8f95cbc42d14c35058721bc97096.png_2200x2200q80.jpg_.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">
+                        <ol>
+                          <li>200 ĐƠN</li>
+                          <li>46 ĐƠN</li>
+                          <li>700 ĐƠN</li>
+                          <li>47 ĐƠN</li>
+                          <li>29 ĐƠN</li>
+                          <li>209 ĐƠN</li>
+                          <li>346 ĐƠN</li>
+                          <li>25 ĐƠN</li>
+                          <li>200 ĐƠN</li>
+                          <li>222 ĐƠN</li>
+                          <li>333 ĐƠN</li>
+                          <li>6666 ĐƠN</li>
+                        </ol>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 sp">
+                  <div class="card" style="width: 18rem;">
+                    <img src="./img/766b3307bc2718b420b4f3c39600ba46.jpg_720x720q80.jpg_.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">
+                        <ol>
+                          <li>200 ĐƠN</li>
+                          <li>46 ĐƠN</li>
+                          <li>700 ĐƠN</li>
+                          <li>47 ĐƠN</li>
+                          <li>29 ĐƠN</li>
+                          <li>209 ĐƠN</li>
+                          <li>346 ĐƠN</li>
+                          <li>25 ĐƠN</li>
+                          <li>200 ĐƠN</li>
+                          <li>222 ĐƠN</li>
+                          <li>333 ĐƠN</li>
+                          <li>6666 ĐƠN</li>
+                        </ol>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 sp">
+                  <div class="card" style="width: 18rem;">
+                    <img src="./img/fbd12f114e8a9e85382919fc1004ec9a.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text"><ol>
+                        <li>200 ĐƠN</li>
+                        <li>46 ĐƠN</li>
+                        <li>700 ĐƠN</li>
+                        <li>47 ĐƠN</li>
+                        <li>29 ĐƠN</li>
+                        <li>209 ĐƠN</li>
+                        <li>346 ĐƠN</li>
+                        <li>25 ĐƠN</li>
+                        <li>200 ĐƠN</li>
+                        <li>222 ĐƠN</li>
+                        <li>333 ĐƠN</li>
+                        <li>6666 ĐƠN</li>
+                      </ol></p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 sp">
+                  <div class="card" style="width: 18rem;">
+                    
+                    <img src="./img/giay.png" class="card-img-top" alt="...">
+
+                    <div class="card-body">
+                      <div class="card-text">
+                        <ol>
+                        <li>200 ĐƠN</li>
+                        <li>46 ĐƠN</li>
+                        <li>700 ĐƠN</li>
+                        <li>47 ĐƠN</li>
+                        <li>29 ĐƠN</li>
+                        <li>209 ĐƠN</li>
+                        <li>346 ĐƠN</li>
+                        <li>25 ĐƠN</li>
+                        <li>200 ĐƠN</li>
+                        <li>222 ĐƠN</li>
+                        <li>333 ĐƠN</li>
+                        <li>6666 ĐƠN</li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 sp">
+                  <div class="card" style="width: 18rem;">
+                    <img src="./img/balo.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <span class="card-text">
+                        <ol>
+                        <li>200 ĐƠN</li>
+                        <li>46 ĐƠN</li>
+                        <li>700 ĐƠN</li>
+                        <li>47 ĐƠN</li>
+                        <li>29 ĐƠN</li>
+                        <li>209 ĐƠN</li>
+                        <li>346 ĐƠN</li>
+                        <li>25 ĐƠN</li>
+                        <li>200 ĐƠN</li>
+                        <li>222 ĐƠN</li>
+                        <li>333 ĐƠN</li>
+                        <li>6666 ĐƠN</li>
+                      </ol>
+                    </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2  class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              DOANH THU THEO THỜI GIAN
+            </button>
+          </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            <p class="card-text"><ol>
+              <li>200.000.000 đ</li>
+              <li>460.000.000 đ</li>
+              <li>700.000.000 đ</li>
+              <li>47d.000.000 đ</li>
+              <li>290.000.000 đ</li>
+              <li>209.000.000 đ</li>
+              <li>346.000.000 đ</li>
+              <li>250.000.000 đ</li>
+              <li>200.000.000 đ</li>
+              <li>222.000.000 đ</li>
+              <li>333.000.000 đ</li>
+              <li>666.000.000 đ</li>
+            </ol></p>
+          </div>
+        </div>
+      </div>
+
+      <div  class="card">
+        <div  class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Số lượng sản phẩm bán được theo loại và thời gian
+            </button>
+          </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+            <ul>
+              <li><h4>ÁO</h4></li>
+              <li>Tháng 1: 300 cái</li>
+              <li>Tháng 2: 300 cái</li>
+              <li>Tháng 3: 300 cái</li>
+              <li>Tháng 4: 300 cái</li>
+              <li>Tháng 5: 300 cái</li>
+              <li>Tháng 6: 300 cái</li>
+              <li>Tháng 7: 300 cái</li>
+              <li>Tháng 8: 300 cái</li>
+              <li>Tháng 9: 300 cái</li>
+              <li>Tháng 10: 300 cái</li>
+              <li>Tháng 11: 300 cái</li>
+              <li>Tháng 12: 300 cái</li>
+
+            </ul>
+            <h4>QUẦN</h4>
+            <ol>
+              
+              <li>Tháng 1: 300 cái</li>
+              <li>Tháng 2: 300 cái</li>
+              <li>Tháng 3: 300 cái</li>
+              <li>Tháng 4: 300 cái</li>
+              <li>Tháng 5: 300 cái</li>
+              <li>Tháng 6: 300 cái</li>
+              <li>Tháng 7: 300 cái</li>
+              <li>Tháng 8: 300 cái</li>
+              <li>Tháng 9: 300 cái</li>
+              <li>Tháng 10: 300 cái</li>
+              <li>Tháng 11: 300 cái</li>
+              <li>Tháng 12: 300 cái</li>
+            </ol>
+            <h4>NÓN</h4>
+            <ol>
+              <li>Tháng 1: 300 cái</li>
+              <li>Tháng 2: 300 cái</li>
+              <li>Tháng 3: 300 cái</li>
+              <li>Tháng 4: 300 cái</li>
+              <li>Tháng 5: 300 cái</li>
+              <li>Tháng 6: 300 cái</li>
+              <li>Tháng 7: 300 cái</li>
+              <li>Tháng 8: 300 cái</li>
+              <li>Tháng 9: 300 cái</li>
+              <li>Tháng 10: 300 cái</li>
+              <li>Tháng 11: 300 cái</li>
+              <li>Tháng 12: 300 cái</li>
+            </ol>
+            <h4>GIÀY</h4>
+            <ol>
+              <li>Tháng 1: 300 cái</li>
+              <li>Tháng 2: 300 cái</li>
+              <li>Tháng 3: 300 cái</li>
+              <li>Tháng 4: 300 cái</li>
+              <li>Tháng 5: 300 cái</li>
+              <li>Tháng 6: 300 cái</li>
+              <li>Tháng 7: 300 cái</li>
+              <li>Tháng 8: 300 cái</li>
+              <li>Tháng 9: 300 cái</li>
+              <li>Tháng 10: 300 cái</li>
+              <li>Tháng 11: 300 cái</li>
+              <li>Tháng 12: 300 cái</li>
+            </ol>
+            <h4>BALO</h4>
+            <ol>
+              <li>Tháng 1: 300 cái</li>
+              <li>Tháng 2: 300 cái</li>
+              <li>Tháng 3: 300 cái</li>
+              <li>Tháng 4: 300 cái</li>
+              <li>Tháng 5: 300 cái</li>
+              <li>Tháng 6: 300 cái</li>
+              <li>Tháng 7: 300 cái</li>
+              <li>Tháng 8: 300 cái</li>
+              <li>Tháng 9: 300 cái</li>
+              <li>Tháng 10: 300 cái</li>
+              <li>Tháng 11: 300 cái</li>
+              <li>Tháng 12: 300 cái</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingfour">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Số lượng sản phẩm bán được theo Mã và thời gian
+            </button>
+          </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingfour" data-parent="#accordionExample">
+          <div class="card-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Mã</th>
+                  <th>Th 1</th>
+                  <th>Th 2</th>
+                  <th>Th 3</th>
+                  <th>Th 4</th>
+                  <th>Th 5</th>
+                  <th>Th 6</th>
+                  <th>Th 7</th>
+                  <th>Th 8</th>
+                  <th>Th 9</th>
+                  <th>Th 10</th>
+                  <th>Th 11</th>
+                  <th>Th 12</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>sp_01</th>
+                  <td>360</td>
+                  <td>438</td>
+                  <td>893</td>
+                  <td>893</td>
+                  <td>235</td>
+                  <td>515</td>
+                  <td>576</td>
+                  <td>654</td>
+                  <td>546</td>
+                  <td>884</td>
+                  <td>468</td>
+                  <td>846</td>
+                </tr>
+                <tr>
+                  <th>sp_02</th>
+                  <td>360</td>
+                  <td>438</td>
+                  <td>893</td>
+                  <td>893</td>
+                  <td>235</td>
+                  <td>515</td>
+                  <td>576</td>
+                  <td>654</td>
+                  <td>546</td>
+                  <td>884</td>
+                  <td>468</td>
+                  <td>846</td>
+                </tr>
+                <tr>
+                  <th>sp_03</th>
+                  <td>360</td>
+                  <td>438</td>
+                  <td>893</td>
+                  <td>893</td>
+                  <td>235</td>
+                  <td>515</td>
+                  <td>576</td>
+                  <td>654</td>
+                  <td>546</td>
+                  <td>884</td>
+                  <td>468</td>
+                  <td>846</td>
+                </tr>
+                <tr>
+                  <th>sp_04</th>
+                  <td>360</td>
+                  <td>438</td>
+                  <td>893</td>
+                  <td>893</td>
+                  <td>235</td>
+                  <td>515</td>
+                  <td>576</td>
+                  <td>654</td>
+                  <td>546</td>
+                  <td>884</td>
+                  <td>468</td>
+                  <td>846</td>
+                </tr>
+                <tr>
+                  <th>sp_05</th>
+                  <td>360</td>
+                  <td>438</td>
+                  <td>893</td>
+                  <td>893</td>
+                  <td>235</td>
+                  <td>515</td>
+                  <td>576</td>
+                  <td>654</td>
+                  <td>546</td>
+                  <td>884</td>
+                  <td>468</td>
+                  <td>846</td>
+                </tr>
+                <tr>
+                  <th>sp_06</th>
+                  <td>360</td>
+                  <td>438</td>
+                  <td>893</td>
+                  <td>893</td>
+                  <td>235</td>
+                  <td>515</td>
+                  <td>576</td>
+                  <td>654</td>
+                  <td>546</td>
+                  <td>884</td>
+                  <td>468</td>
+                  <td>846</td>
+                </tr>
+                <tr>
+                  <th>sp_07</th>
+                  <td>360</td>
+                  <td>438</td>
+                  <td>893</td>
+                  <td>893</td>
+                  <td>235</td>
+                  <td>515</td>
+                  <td>576</td>
+                  <td>654</td>
+                  <td>546</td>
+                  <td>884</td>
+                  <td>468</td>
+                  <td>846</td>
+                </tr>
+                <tr>
+                  <th>sp_08</th>
+                  <td>360</td>
+                  <td>438</td>
+                  <td>893</td>
+                  <td>893</td>
+                  <td>235</td>
+                  <td>515</td>
+                  <td>576</td>
+                  <td>654</td>
+                  <td>546</td>
+                  <td>884</td>
+                  <td>468</td>
+                  <td>846</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+    <script src="./vendor/jquery/jquery-3.6.0.min.js"></script>
+    <script src="./vendor/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,556 @@
+/* Phần main Tin Tức*/
+.main-news {
+  padding-top: 12%;
+  padding-bottom: 5%;
+  border-bottom:1px solid rgba(0, 0, 0, 0.1);
+}
+.content-new {
+  width: 100%;
+}
+.content-news h1 {
+  text-align: center;
+}
+.frames-all {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2% 2%;
+}
+.frames-left {
+  text-align: center;
+  width: 48%;
+}
+.news-img-wrap {
+  overflow: hidden;
+  height: 100%;
+}
+.frames-left-item img {
+  width: 100%;
+  transition: linear 1s;
+}
+.news-img-wrap:hover img {
+  transform: scale(1.5);
+}
+
+.frames-left-item h4 {
+  padding-top: 30px;
+  font-family: RedRose-Bold;
+}
+.frames-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.frames-img {
+  overflow: hidden;
+  height: 70%;
+  width: 70%;
+}
+.frames-img img {
+  width: 100%;
+  height: 100%;
+  transition: linear 1s;
+}
+.frames-img:hover img {
+  transform: scale(1.3);
+}
+.frames-right-item {
+  display: flex;
+}
+.frames-right-item-top {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+}
+.frames-right-item-bottom {
+  padding-top: 30px;
+}
+.frames-text {
+  padding: 10px 15px;
+}
+.frames-text h6 {
+  font-family: RedRose-Bold;
+  font-size: medium;
+}
+.frames-text p {
+  font-size: small;
+  padding-right: 100px;
+}
+.sublist-news {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5%;
+} 
+.sublist-news-item {
+  width:100%;
+  padding-bottom: 3%;
+  padding-left: 9%;
+  padding-right: 20%;
+  
+  
+}
+.sublist-content {
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+/* Phần Transition cho sublist */
+.sublist-content-img {
+  overflow: hidden;
+  width: 70%;
+  height: 70%;
+}
+.sublist-content-img img {
+  width: 100%;
+  height: 100%;
+  transition: linear 1s;
+ 
+}
+.sublist-content-img:hover img {
+  transform: scale(1.3);
+}
+.sublist-content-text {
+  padding: 0 15px;
+}
+.date-top {
+  font-size: small;
+}
+.date-top i {
+  font-size: 10px;
+  color: red;
+  padding-right: 10px;
+}
+.sublist-content-text h5 {
+  font-family: RedRose-Bold;
+}
+.sublist-content-text p {
+  color: #666666;
+  font-size: smaller;
+}
+.next {
+  text-decoration: underline;
+  font-size: smaller;
+}
+.next {
+   padding-left: 0;
+   transition: all linear 0.5s;
+}
+.next:hover {
+  padding-left: 10px;
+  transition: linear 500ms;
+}
+.dots-news {
+  text-align: center;
+  padding-top:3%;
+
+}
+.dots-news a {
+  border: 1px solid rgb(0, 0 ,0 , 0.1);
+  padding: 10px;
+  transition: linear 0.1s;
+  text-decoration: none;
+  color: black;
+}
+.dots-news a:hover {
+  background-color: black;
+  color: white;
+  transition: linear 200ms;
+}
+/*-------------------------------- Header ------------------------------*/
+@font-face {
+  font-family: "RedRose";
+  src: url("./font/RedRose-Regular.ttf");
+}
+
+@font-face {
+  font-family: "RedRose-bold";
+  src: url("./font/RedRose-Bold.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: RedRose;
+}
+/* Background phần header*/
+.headerMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+}
+.submenu-toggle {
+  display: none;
+}
+.header-1 {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  width: 100%;
+  background-color: #e7e7e7;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+.toggle {
+  display: none;
+}
+.toggle img {
+  height: 70px;
+}
+.logo {
+  padding-left: 2%;
+  padding-top: 1%;
+}
+.form-search {
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+.text-search {
+  width: 70%;
+  border: none;
+  outline-style: none;
+  padding-top: 3%;
+  background-color: transparent;
+}
+.btn-search {
+  padding-top: 3%;
+  height: 50px;
+  width: 30%;
+  font-family: RedRose;
+  text-align: right;
+  font-size: 14px;
+  border: none;
+  outline-style: none;
+  background-color: transparent;
+}
+
+.btn-search-mb {
+  display: none;
+}
+.list-info {
+  display: flex;
+  list-style-type: none;
+  font-size: 15px;
+  font-family: RedRose;
+  padding-left: 0;
+  text-align: center;
+  position: relative;
+}
+.list-info li {
+  padding: 0px 10px;
+}
+.list-info a {
+  text-decoration: none;
+  height: auto;
+  color: #333333;
+}
+.list-info a i {
+  padding: 15px;
+  font-size: 20px;
+  color: black;
+}
+.user a {
+  display: block;
+}
+
+.address:hover {
+  background-color: white;
+}
+.cart:hover {
+  background-color: white;
+}
+/* Phần navbar menu*/
+.header-2 {
+  position: relative;
+  z-index: 1;
+}
+.menu-parent {
+  padding: 2% 0 0 1%;
+  background-color: #e7e7e7;
+}
+.menu-parent a {
+  text-decoration: none;
+  display: flex;
+  font-size: 15px;
+  color: #333333;
+  padding: 8px 15px;
+  font-family: RedRose-bold;
+}
+.menu-parent a:hover {
+  background-color: white;
+  color: #333333;
+}
+.menu-parent > li {
+  display: inline-block;
+}
+
+.sub-menu {
+  display: none;
+  gap: 5%;
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  padding: 10px;
+}
+.sub-menu-sp {
+  padding-left: 0;
+}
+.sub-menu-item:hover .sub-menu {
+  display: flex;
+}
+.sub-menu-item:hover .sub-menu a:hover {
+  color: crimson;
+}
+.sub-menu-discount-item {
+  position: absolute;
+  display: none;
+  padding: 10px;
+  background-color: white;
+}
+
+.sub-menu-discount:hover .sub-menu-discount-item {
+  display: block;
+}
+
+.sub-menu-discount .sub-menu-discount-item a:hover {
+  color: crimson;
+}
+
+.sub-menu-news-item {
+  position: absolute;
+  display: none;
+  padding: 10px;
+  background-color: white;
+}
+
+.sub-menu-news:hover .sub-menu-news-item {
+  display: block;
+}
+
+.sub-menu-news:hover .sub-menu-news-item a:hover {
+  color: crimson;
+}
+.slick-prev {
+  left: 0;
+  z-index: 5;
+}
+.slick-next {
+  right: 0;
+}
+.slide-item {
+  width: 100%;
+}
+
+.slide-item .img-slide-mb {
+  display: none;
+}
+
+.slide-item img {
+  max-width: 100%;
+}
+
+/*-------------------------- Phần footer -----------------------------------*/
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+.footer-item {
+  padding: 3% 3%;
+}
+.footer-item h4 {
+  font-family: RedRose;
+  margin: 0 0 24px;
+  color: #000000;
+  font-size: 18px;
+}
+.footer-item p {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 0 12px;
+  color: #000000;
+  font-size: 14px;
+}
+.footer-register {
+  padding-left: 7%;
+}
+.text-register {
+  border-bottom: 2px solid gray;
+
+  padding: 2% 0;
+}
+.text-register input {
+  border: none;
+  margin: 5px 0;
+  width: 80%;
+  outline-style: none;
+}
+.text-register a {
+  font-size: 30px;
+  color: gray;
+  padding-left: 3%;
+}
+.icon-social {
+  padding: 10px;
+}
+.icon-social a img {
+  padding-left: 3%;
+  color: gray;
+}
+.container-footer {
+  text-align: center;
+  color: #666666;
+  font-size: 13px;
+  font-family: RedRose;
+}
+.container-footer p {
+  padding: 0.5rem;
+}
+.container-footer p {
+  letter-spacing: 0.05rem;
+  padding: 5px;
+  margin: 0;
+}
+.container-footer a img {
+  padding-top: 50px;
+}
+/*------------------------------ Phần Hotline ---------------------------------------*/
+.contact {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+}
+.list-contact li {
+  padding: 10px;
+  list-style-type: none;
+}
+#contact-hotline {
+  border: 2px solid black;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  background-color: white;
+}
+.contact-icon i {
+  animation-name: shakePhone; /*Tên Của animation*/
+  animation-duration: 1500ms; /*Thời gian hoàn thành 1 lần animation*/
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite; /*Không giới hạn số lần chuyển động*/
+  font-size: small;
+}
+@-webkit-keyframes shakePhone {
+  from {
+    transform: rotate(50deg);
+  }
+  to {
+    transform: rotate(-10deg);
+  }
+}
+.background-dark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 4;
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all 500ms linear;
+}
+
+.background-dark.open {
+  opacity: 1;
+  visibility: visible;
+}
+/*------------------------------------ Login account ----------------------------------------*/
+.login-create-acount {
+  background-color: #fff;
+  width: calc(100% - 30px);
+  height: 100vh;
+  position: absolute;
+  z-index: 10;
+  right: -100%;
+  top: 100%;
+  transition: right ease-out 500ms;
+}
+
+.login-create-acount.openlogin {
+  right: 0;
+  transition: right ease-out 500ms;
+}
+.login-create {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 8%;
+}
+.text {
+  font-family: RedRose;
+  font-size: 15px;
+  color: #222222;
+  text-transform: uppercase;
+  font-family: RedRose-bold;
+}
+.form-login {
+  display: flex;
+  flex-direction: column;
+  padding: 10%;
+}
+.input-login {
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+.input-login input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: 10px 0;
+  width: 100%;
+}
+.checkbox {
+  text-align: center;
+  padding: 5% 0;
+}
+.btn-login {
+  border: 1px solid black;
+  background-color: black;
+  padding: 10px 0;
+  margin: 10px 0;
+  color: white;
+}
+.btn-login-1:hover {
+  background-color: white;
+  color: black;
+  transition: linear 500ms;
+}
+.btn-login-2 {
+  background-color: #3b5998;
+}
+.btn-login-2:hover {
+  background-color: white;
+  color: #3b5998;
+  transition: linear 500ms;
+}
+.navbar-search {
+  display: none;
+}
+.icon-search-x {
+  display: none;
+}
+.openaccount.active {
+  background-color: #fff;
+}

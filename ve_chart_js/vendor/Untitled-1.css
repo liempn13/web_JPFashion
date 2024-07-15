@@ -1,0 +1,23 @@
+h3{
+    text-align: center;
+}
+h1{
+    text-align: center;
+    background-color: bisque;
+}
+nav#hhihi .hihi_sub{
+    display: none;   
+}
+nav#hhihi li:hover .hihi_sub{
+    display: block;
+}
+.sp{
+    padding: 20px;
+}
+a{
+    color:aliceblue;
+    text-decoration:none;
+}
+.mau{
+    color: aqua;
+}

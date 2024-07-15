@@ -1,0 +1,582 @@
+@font-face {
+  font-family: "RedRose";
+  src: url("./font/RedRose-Regular.ttf");
+}
+
+@font-face {
+  font-family: "RedRose-bold";
+  src: url("./font/RedRose-Bold.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: RedRose;
+}
+/* Background phần header*/
+.headerMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+}
+.submenu-toggle {
+  display: none;
+}
+.header-1 {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  width: 100%;
+  background-color: #e7e7e7;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+.toggle {
+  display: none;
+}
+.toggle img {
+  height: 70px;
+}
+.logo {
+  padding-left: 2%;
+  padding-top: 1%;
+}
+.form-search {
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+.text-search {
+  width: 70%;
+  border: none;
+  outline-style: none;
+  padding-top: 3%;
+  background-color: transparent;
+}
+.btn-search {
+  padding-top: 3%;
+  height: 50px;
+  width: 30%;
+  font-family: RedRose;
+  text-align: right;
+  font-size: 14px;
+  border: none;
+  outline-style: none;
+  background-color: transparent;
+}
+
+.btn-search-mb {
+  display: none;
+}
+.list-info {
+  display: flex;
+  list-style-type: none;
+  font-size: 15px;
+  font-family: RedRose;
+  padding-left: 0;
+  text-align: center;
+  position: relative;
+}
+.list-info li {
+  padding: 0px 10px;
+}
+.list-info a {
+  text-decoration: none;
+  height: auto;
+  color: #333333;
+}
+.list-info a i {
+  padding: 15px;
+  font-size: 20px;
+  color: black;
+}
+.user a {
+  display: block;
+}
+.address:hover {
+  background-color: white;
+}
+.cart:hover {
+  background-color: white;
+}
+/* Phần navbar menu*/
+.header-2 {
+  position: relative;
+  z-index: 1;
+  background-color: #e7e7e7;
+}
+.menu-parent {
+  padding: 2% 0 0 1%;
+}
+.menu-parent a {
+  text-decoration: none;
+  display: flex;
+  font-size: 15px;
+  color: #333333;
+  padding: 8px 15px;
+  font-family: RedRose-bold;
+}
+.menu-parent a:hover {
+  background-color: white;
+  color: #333333;
+}
+.menu-parent > li {
+  display: inline-block;
+}
+
+.sub-menu {
+  display: none;
+  gap: 5%;
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  padding: 10px;
+}
+.sub-menu-sp {
+  padding-left: 0;
+}
+.sub-menu-item:hover .sub-menu {
+  display: flex;
+}
+.sub-menu-item:hover .sub-menu a:hover {
+  color: crimson;
+}
+.sub-menu-discount-item {
+  position: absolute;
+  display: none;
+  padding: 10px;
+  background-color: white;
+}
+
+.sub-menu-discount:hover .sub-menu-discount-item {
+  display: block;
+}
+
+.sub-menu-discount .sub-menu-discount-item a:hover {
+  color: crimson;
+}
+
+.sub-menu-news-item {
+  position: absolute;
+  display: none;
+  padding: 10px;
+  background-color: white;
+}
+
+.sub-menu-news:hover .sub-menu-news-item {
+  display: block;
+}
+
+.sub-menu-news:hover .sub-menu-news-item a:hover {
+  color: crimson;
+}
+/* Phần footer */
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+.footer-item {
+  padding: 3% 3%;
+}
+.footer-item h4 {
+  font-family: RedRose;
+  margin: 0 0 24px;
+  color: #000000;
+  font-size: 18px;
+}
+.footer-item p {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 0 12px;
+  color: #000000;
+  font-size: 14px;
+}
+.footer-register {
+  padding-left: 7%;
+}
+.text-register {
+  border-bottom: 2px solid gray;
+
+  padding: 2% 0;
+}
+.text-register input {
+  border: none;
+  margin: 5px 0;
+  width: 80%;
+  outline-style: none;
+}
+.text-register a {
+  font-size: 30px;
+  color: gray;
+  padding-left: 3%;
+}
+.icon-social {
+  padding: 10px;
+}
+.icon-social a img {
+  padding-left: 3%;
+  color: gray;
+}
+.container-footer {
+  text-align: center;
+  color: #666666;
+  font-size: 13px;
+  font-family: RedRose;
+}
+.container-footer p {
+  padding: 0.5rem;
+}
+.container-footer p {
+  letter-spacing: 0.05rem;
+  padding: 5px;
+  margin: 0;
+}
+.container-footer a img {
+  padding-top: 50px;
+}
+/* Phần Hotline */
+.contact {
+  position: fixed;
+  z-index: 5;
+  bottom: 0;
+  right: 1%;
+}
+.list-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+.list-contact li {
+  padding: 10px;
+  list-style-type: none;
+}
+#contact-hotline {
+  border: 2px solid black;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+}
+.contact-icon i {
+  animation-name: shakePhone; /*Tên Của animation*/
+  animation-duration: 1500ms; /*Thời gian hoàn thành 1 lần animation*/
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite; /*Không giới hạn số lần chuyển động*/
+  font-size: small;
+}
+@-webkit-keyframes shakePhone {
+  from {
+    transform: rotate(50deg);
+  }
+  to {
+    transform: rotate(-10deg);
+  }
+}
+.list-contact p {
+  margin: auto;
+}
+
+.background-dark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 4;
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all 500ms linear;
+}
+
+.background-dark.open {
+  opacity: 1;
+  visibility: visible;
+}
+/* Login account */
+.login-create-acount {
+  background-color: #fff;
+  width: calc(100% - 30px);
+  height: 100vh;
+  position: absolute;
+  z-index: 5;
+  right: -100%;
+  top: 97%;
+  transition: right ease-out 500ms;
+}
+
+.login-create-acount.openlogin {
+  right: 0;
+  transition: right ease-out 500ms;
+}
+.login-create {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 8%;
+}
+.text {
+  font-family: RedRose;
+  font-size: 15px;
+  color: #222222;
+  text-transform: uppercase;
+  font-family: RedRose-bold;
+}
+.form-login {
+  display: flex;
+  flex-direction: column;
+  padding: 10%;
+}
+.input-login {
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+.input-login input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: 10px 0;
+  width: 100%;
+}
+.checkbox {
+  text-align: center;
+  padding: 5% 0;
+}
+.btn-login {
+  border: 1px solid black;
+  background-color: black;
+  padding: 10px 0;
+  margin: 10px 0;
+  color: white;
+}
+.btn-login-1:hover {
+  background-color: white;
+  color: black;
+  transition: linear 500ms;
+}
+.btn-login-2 {
+  background-color: #3b5998;
+}
+.btn-login-2:hover {
+  background-color: white;
+  color: #3b5998;
+  transition: linear 500ms;
+}
+.navbar-search {
+  display: none;
+}
+.icon-search-x {
+  display: none;
+}
+.openaccount.active {
+  background-color: #fff;
+}
+/*----------------------MAIN TUYỂN DỤNG ------------------------*/
+.main-recruitment {
+  padding-top: 12%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.title {
+  text-align: center;
+}
+.title-item {
+  display: flex;
+  justify-content: center;
+  padding: 3%;
+}
+.recruitment {
+  width: 25%;
+}
+.recruitment a {
+  text-decoration: none;
+  color: black;
+  font-size: medium;
+}
+.news a {
+  text-decoration: none;
+  color: black;
+  font-size: medium;
+}
+.unline {
+  width: 20%;
+}
+.content-policy {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.text-policy {
+  width: 50%;
+  padding-left:3%;
+}
+.img-policy {
+  width: 50%;
+}
+.img-policy img {
+  width: 90%;
+  padding-left: 5%;
+}
+.event-img {
+  padding: 3% 0 2% 2%;
+}
+.event-item {
+  width: 100%;
+}
+.event-item h5 {
+  text-align: center;
+  padding: 3% 0;
+}
+
+.event-item-wrap {
+  overflow: hidden;
+  display: block;
+  width: 90%;
+  height: 100%;
+}
+.event-item-wrap img {
+  width: 100%;
+  transition: linear 1s;
+}
+.event-item-wrap:hover img {
+  transform: scale(1.4);
+}
+.Welfare {
+  background-color: #f4f4f4;
+  padding: 3% 0;
+}
+.Welfare-title {
+  padding: 1% 6%;
+  font-family: RedRose-Bold;
+}
+.Welfare-all {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.Welfare-textbox {
+  width: 25%;
+  padding-bottom: 5%;
+}
+.Welfare-textbox-item {
+  margin-left: 15%;
+}
+.textbox {
+  width: 90%;
+  padding: 10% 1% 15% 1%;
+}
+.textbox h5{
+   font-family: RedRose-Bold;
+}
+.textbox p {
+  font-size: smaller;
+  color: #666666;
+}
+.dev {
+  margin: 0 3%;
+  padding: 3% 0;
+}
+.parameter {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  
+}
+.parameter-img-num {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5% 0;
+}
+.parameter-number {
+  font-family: RedRose-Bold;
+  font-size: xx-large;
+}
+.parameter-content {
+  font-size: smaller;
+  color: #666666;
+}
+.dev-title {
+  padding-top: 2%;
+  font-family: RedRose-Bold;
+}
+.dev-content {
+  display: flex;
+  width: 100%;
+}
+.dev-content h5 {
+  width: 35%;
+  
+}
+.dev-content p {
+  width: 60%;
+  padding: 0 5%;
+}
+.educate {
+  display: flex;
+  width: 100%;
+}
+.educate-frames {
+  width: 40%;
+}
+.educate-circle {
+  width: 370px;
+  height: 370px;
+  border-radius: 100%;
+  border: 1px solid black;
+  background-color: #f4f4f4;
+}
+.educate-circle h5 {
+  text-align: center;
+  padding-top: 30% ;
+  font-family: RedRose-Bold;
+}
+.educate-circle p {
+  font-size: small;
+  width: 80%;
+  text-align: center;
+  padding-left:15%;
+}
+.educate-content {
+  width: 60%;
+  padding: 3% 0;
+}
+.educate-content-item {
+  display: flex;
+}
+.educate-icon {
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color:#1c1c1c;
+  line-height: 60px;
+  margin-top: 2%;
+}
+.educate-icon img {
+  width: 60%;
+  height: 60%;
+}
+.educate-text {
+  flex: 1;
+  
+  padding-left: 3%;
+}
+.educate-text div {
+  font-family: RedRose-Bold;
+  padding: 1% 0;
+}
+
+
